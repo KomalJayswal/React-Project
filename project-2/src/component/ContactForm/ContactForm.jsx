@@ -3,10 +3,28 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import Button from "../Button/Button";
 import styles from "./Contact.module.css";
-import FormControl from "../FormControl/FormControl";
+import { useState } from "react";
 
 const ContactForm = () => {
-  console.log(styles);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [text, setText] = useState("");
+
+  const onViaCallSubmit = () => {
+    console.log("I am from call");
+  };
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+
+    setName(event.target[0].value);
+    setEmail(event.target[1].value);
+    setText(event.target[2].value);
+
+    console.log("name", event.target[0].value);
+    console.log("email", event.target[1].value);
+    console.log("text", event.target[2].value);
+  };
 
   return (
     <section className={`${styles.container}`}>
@@ -16,7 +34,11 @@ const ContactForm = () => {
             text="VIA SUPPORT CHAT"
             icon={<MdMessage fontSize="24px" />}
           />
-          <Button text="VIA CALL" icon={<FaPhoneAlt fontSize="24px" />} />
+          <Button
+            onClick={onViaCallSubmit}
+            text="VIA CALL"
+            icon={<FaPhoneAlt fontSize="24px" />}
+          />
         </div>
         <div>
           <Button
@@ -26,26 +48,32 @@ const ContactForm = () => {
           />
         </div>
 
-        <form>
-          <FormControl text="Name" />
-        </form>
+        <form onSubmit={onSubmit}>
+          <div className={styles.form_control}>
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" />
+          </div>
 
-        <form>
-          <FormControl text="E-Mail" />
-        </form>
+          <div className={styles.form_control}>
+            <label htmlFor="name">E-Mail</label>
+            <input type="text" name="name" />
+          </div>
 
-        <form>
-          <FormControl text="TEXT" />
-        </form>
+          <div className={styles.form_control}>
+            <label htmlFor="name">TEXT</label>
+            <textarea name="text" rows="8" />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "end",
+            }}
+          >
+            <Button text="SUBMIT BUTTON" />
+          </div>
 
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "end",
-          }}
-        >
-          <Button text="SUBMIT BUTTON" />
-        </div>
+          <div>{name + " " + email + " " + text}</div>
+        </form>
       </div>
 
       <div className={styles.contact_image}>

@@ -1,5 +1,6 @@
 .contact {
-  padding: 40px;
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 .contact h1 {
@@ -7,6 +8,7 @@
   font-weight: bold;
   color: black;
   margin-bottom: 20px;
+  max-width: 80%;
 }
 
 .contact p {

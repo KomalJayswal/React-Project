@@ -4,7 +4,7 @@ const ContactHeader = () => {
   console.log(styles);
 
   return (
-    <div className={`${styles.contact} container`}>
+    <div className={`${styles.contact}`}>
       <h1>CONTACT US</h1>
       <p>
         LET’S CONNECT: WE’RE HERE TO HELP, AND WE’D LOVE TO HEAR FROM YOU!
