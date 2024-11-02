@@ -1,21 +1,4 @@
-.container {
-  display: flex;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.top_btn {
-  display: flex;
-  gap: 32px;
-}
-
-.contact_form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-/* .form_control {
+.form_control {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -33,4 +16,5 @@
   left: 10px;
   background-color: white;
   padding: 0 10px;
-} */
+  font-size: 14px;
+}
